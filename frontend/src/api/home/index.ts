@@ -4,6 +4,7 @@ import { getAPIURL } from "~/constants"
 
 export const getSummary = async (): Promise<Summary> => {
   try {
+    console.log(`${getAPIURL()}/summary`)
     const resp = await axios.get<Summary>(`${getAPIURL()}/summary`)
     if (resp.status === 200 && resp.data) {
       return resp.data
